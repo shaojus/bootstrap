@@ -70,6 +70,18 @@ A key consideration to take into account with generative models is to check if t
 
 ## Same Goals, Different Paths: Comparing iEFM and iDEM
 
+<div style="max-width: 500px; margin: 0 auto;">
+    <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline 
+        style="width: 100%; height: auto;">
+        <source src="assets/img/2025-04-28-ebm-vs-mcmc/idem_illustrated.mp4" type="video/mp4">
+    </video>
+</div>
+
+
 iEFM and iDEM are quite similar in their implementation. While iEFM is an extension of flow matching<d-cite key="lipman2022flow"></d-cite> and iDEM an extension of score matching<d-cite key="song2020score"></d-cite>, both obtain a target vector field that is approximated through a weighted average over monte carlo samples. The weights are given by the boltzmann densities of the samples ($w(x)\propto exp(-\mathcal{E}(x))$). In the case of iEFM, the target vector is a weighted average of the analytical vector field to those samples and is derived from Flow Matching theory. Whereas in iDEM, the target score field is obtained as a weighted average of the gradients of the energy function computed at the positions of the Monte Carlo samples. Note in the following equations that the boltzmann samples $x_T$ are denoted $x_1$ ($T=1$) for iEFM and $x_0$ ($T=0$) for iDEM:
 
 
